@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+{% block title %}Add New Task
+{% endblock %}
+
+{% block body %}
+	{% include "main/components/header.html.twig" %}
+
+	<div class="row mt-3">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+			{{form_start(form)}}
+			<div class="form-group">
+				<label class='form-label' for="name">Task Name</label>
+				{{form_widget(form.name, {'attr':{'class':'form-control'}})}}
+			</div>
+			<div class="form-group mt-3">
+				<label for="completed" class="form-check-label">Completed</label>
+				{{form_widget(form.completed, {'attr':{'class':'form-check-input checkbox', 'type': 'checkbox'}})}}
+			</div>
+			<div class="row form-group mt-3">
+				<div class="col-md-6">
+					<a href="{{path('index')}}" class="btn btn-secondary form-control">Go Back</a>
+				</div>
+				<div class="col-md-6">
+					<input type="submit" value="Update Task" class="btn btn-primary form-control">
+				</div>
+			</div>
+			{{form_end(form)}}
+		</div>
+		<div class="col-md-2"></div>
+	</div>
+{% endblock %}
